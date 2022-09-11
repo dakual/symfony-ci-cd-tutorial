@@ -71,7 +71,7 @@ terraform destroy --auto-approve
 
 ### AWS Deployment
 ```sh
-cd k8s-deployment
+cd k8s
 aws eks --region eu-central-1 update-kubeconfig --name <cluster-name>
 kubectl get svc
 kubectl apply -f deployment.yml
