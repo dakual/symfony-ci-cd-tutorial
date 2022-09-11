@@ -75,5 +75,6 @@ cd k8s-deployment
 aws eks --region eu-central-1 update-kubeconfig --name <cluster-name>
 kubectl get svc
 kubectl apply -f deployment.yml
+kubectl apply -f service.yml
 kubectl get deploy,svc,pods
 ```
