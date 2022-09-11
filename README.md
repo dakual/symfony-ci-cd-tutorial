@@ -51,3 +51,29 @@ php bin/console dbal:run-sql 'SELECT * FROM product',
 php bin/console make:fixtures CustomerFixtures
 php bin/console doctrine:fixtures:load
 ```
+
+### Build and push a Docker images to a container registry
+```sh
+docker build -t kurtay/nginx:sym-tut -f ./nginx/Dockerfile .
+docker build -t kurtay/php:sym-tut -f ./php/Dockerfile .
+docker image push kurtay/nginx:sym-tut
+docker image push kurtay/php:sym-tut
+```
+
+### Creating AWS Elastic Kubernetes Cluster
+```sh
+cd aws-eks
+terraform init
+terraform plan
+terraform apply --auto-approve
+terraform destroy --auto-approve
+```
+
+### AWS Deployment
+```sh
+cd k8s-deployment
+aws eks --region eu-central-1 update-kubeconfig --name <cluster-name>
+kubectl get svc
+kubectl apply -f deployment.yml
+kubectl get deploy,svc,pods
+```

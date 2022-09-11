@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sym-app
+spec:
+  selector:
+    matchLabels:
+      app: sym-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sym-app
+    spec:
+      containers:
+      - name: sym-php
+        image: kurtay/php:sym-tut
+        imagePullPolicy: Always
+      - name: sym-nginx
+        image: kurtay/nginx:sym-tut
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

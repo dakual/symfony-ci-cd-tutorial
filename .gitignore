@@ -7,3 +7,22 @@
 */var/
 */vendor/
 ###< symfony/framework-bundle ###
+
+# Compiled files
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+*.terraform.lock
+*.terraform.lock.*
+
+# Directories
+*/.terraform/
+
+# Ignored Terraform files
+*gitignore*.tf
+
+# Ignore Mac .DS_Store files
+.DS_Store
+
+# Ignored vscode files
+.vscode/
