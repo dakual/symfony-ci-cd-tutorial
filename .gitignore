@@ -13,7 +13,7 @@
 *.tfstate.backup
 *.tfstate.lock.info
 *.terraform.lock
-*.terraform.lock.*
+*.terraform.lock
 
 # Directories
 */.terraform/
